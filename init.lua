@@ -181,7 +181,7 @@ vim.cmd('colorscheme tokyonight')
 
 -- Basic Neovim settings
 vim.opt.nu = true
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
