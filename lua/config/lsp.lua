@@ -19,6 +19,7 @@ require('mason-lspconfig').setup({
     'tailwindcss',
     'html',
     'cssls',
+    'clangd',
   },
   handlers = {
     -- Configure ts_ls to start automatically for projects with package.json
