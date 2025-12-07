@@ -20,6 +20,7 @@ require('mason-lspconfig').setup({
     'html',
     'cssls',
     'clangd',
+    'pyright',
   },
   handlers = {
     -- Configure ts_ls to start automatically for projects with package.json
