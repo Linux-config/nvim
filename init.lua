@@ -244,3 +244,18 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
   group = vim.api.nvim_create_augroup("CustomTabSettings", { clear = true }),
 })
+
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
+vim.cmd('hi Normal guibg=NONE ctermbg=NONE')
+vim.cmd('hi LineNr guibg=NONE ctermbg=NONE')
+vim.cmd('hi SignColumn guibg=NONE ctermbg=NONE')
+vim.cmd('hi EndOfBuffer guibg=NONE ctermbg=NONE')
+
+local nvim_tree_groups = { "NvimTreeNormal", "NvimTreeNormalNC", "NvimTreeWinSeparator" }
+
+for _, group in ipairs(nvim_tree_groups) do
+    vim.api.nvim_set_hl(0, group, { bg = "none" })
+end
+
