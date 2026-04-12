@@ -173,6 +173,20 @@ require("lazy").setup({
       })
     end,
   },
+
+  -- Git Diff Viewer
+  {
+    "esmuellert/codediff.nvim",
+    cmd = "CodeDiff",
+  },
+
+  -- Git Decorator
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup()
+    end,
+  },
 })
 
 require("config.lsp")
@@ -200,6 +214,7 @@ vim.keymap.set("n", "<leader>t", ":terminal<CR>", { desc = "Open terminal" })
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save file" })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
 vim.keymap.set("n", "<leader>r", ":terminal ./run.sh<CR>", { desc = "Run script in terminal" })
+vim.keymap.set("n", "<leader>cd", ":CodeDiff<CR>", { desc = "Show Code Diff" })
 
 -- Enable virtual text for diagnostics
 vim.diagnostic.config({
