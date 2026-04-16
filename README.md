@@ -2,6 +2,117 @@
 
 A clean and functional Neovim configuration built with `lazy.nvim`, featuring LSP support, autocompletion, and fuzzy finding.
 
+## 📦 Installation
+
+### Prerequisites (required)
+
+Install these before first launch:
+
+- `neovim` (0.9+ recommended)
+- `git` (required for `lazy.nvim` bootstrap + Git plugins)
+- `ripgrep` (`rg`, required for Telescope `live_grep`)
+- `curl` (used by `rest.nvim`)
+- A C compiler for Treesitter parser builds (`gcc` or `clang`)
+- `make` (recommended for build steps)
+
+### Language Server prerequisites (for this config)
+
+This config installs these LSPs through Mason:
+`jdtls`, `ts_ls`, `eslint`, `intelephense`, `tailwindcss`, `html`, `cssls`, `clangd`, `pyright`.
+
+Install runtimes used by those servers:
+
+- `node` + `npm` (TypeScript/ESLint/Tailwind/CSS/HTML/Intelephense/Pyright toolchain usage)
+- `java` (17+ recommended, required for `jdtls`)
+
+> Note: `jdtls` in this config is currently set up with Linux-specific paths (`/home/angelo/.../config_linux`).
+> If you are on macOS or Windows, update those paths in `lua/config/lsp.lua` before expecting Java LSP to work.
+
+Clone this repository first:
+
+```bash
+git clone <your-repo-url> nvim-config
+```
+
+### Linux
+
+Example install command (Debian/Ubuntu):
+
+```bash
+sudo apt update && sudo apt install -y neovim git ripgrep curl build-essential make nodejs npm openjdk-17-jdk
+```
+
+1. Back up your current Neovim config (optional):
+   ```bash
+   mv ~/.config/nvim ~/.config/nvim.backup
+   ```
+2. Copy this config into place:
+   ```bash
+   mkdir -p ~/.config
+   cp -r nvim-config ~/.config/nvim
+   ```
+3. Start Neovim:
+   ```bash
+   nvim
+   ```
+
+### macOS
+
+Example install command (Homebrew):
+
+```bash
+brew install neovim git ripgrep curl make node openjdk
+```
+
+1. Back up your current Neovim config (optional):
+   ```bash
+   mv ~/.config/nvim ~/.config/nvim.backup
+   ```
+2. Copy this config into place:
+   ```bash
+   mkdir -p ~/.config
+   cp -r nvim-config ~/.config/nvim
+   ```
+3. Start Neovim:
+   ```bash
+   nvim
+   ```
+
+### Windows (PowerShell)
+
+Install dependencies with `winget` (run PowerShell as Administrator):
+
+```powershell
+winget install Neovim.Neovim Git.Git BurntSushi.ripgrep cURL.cURL OpenJS.NodeJS.LTS Oracle.JDK.17
+```
+
+For C/C++ build tools (`clangd`/Treesitter), install either:
+- Visual Studio Build Tools (C++ workload), or
+- LLVM/Clang via `winget install LLVM.LLVM`
+
+1. Back up your current config (optional):
+   ```powershell
+   Rename-Item "$env:LOCALAPPDATA\nvim" "nvim.backup"
+   ```
+2. Copy this config into place:
+   ```powershell
+   Copy-Item -Recurse -Force ".\nvim-config" "$env:LOCALAPPDATA\nvim"
+   ```
+3. Start Neovim:
+   ```powershell
+   nvim
+   ```
+
+## ▶️ First Run / Usage
+
+1. Open Neovim with:
+   ```bash
+   nvim
+   ```
+2. Wait for `lazy.nvim` to install plugins automatically on first launch.
+3. Run `:checkhealth` to verify dependencies.
+4. Use `<leader>e` to open the file tree and `<leader>f` to find files.
+
 ## 🚀 Plugins
 
 ### Core
