@@ -2,6 +2,73 @@
 
 A clean and functional Neovim configuration built with `lazy.nvim`, featuring LSP support, autocompletion, and fuzzy finding.
 
+## 📦 Installation
+
+> Prerequisites (all platforms): `git` and `neovim` (version 0.9+ recommended).
+
+Clone this repository first:
+
+```bash
+git clone <your-repo-url> nvim-config
+```
+
+### Linux
+
+1. Back up your current Neovim config (optional):
+   ```bash
+   mv ~/.config/nvim ~/.config/nvim.backup
+   ```
+2. Copy this config into place:
+   ```bash
+   mkdir -p ~/.config
+   cp -r nvim-config ~/.config/nvim
+   ```
+3. Start Neovim:
+   ```bash
+   nvim
+   ```
+
+### macOS
+
+1. Back up your current Neovim config (optional):
+   ```bash
+   mv ~/.config/nvim ~/.config/nvim.backup
+   ```
+2. Copy this config into place:
+   ```bash
+   mkdir -p ~/.config
+   cp -r nvim-config ~/.config/nvim
+   ```
+3. Start Neovim:
+   ```bash
+   nvim
+   ```
+
+### Windows (PowerShell)
+
+1. Back up your current config (optional):
+   ```powershell
+   Rename-Item "$env:LOCALAPPDATA\nvim" "nvim.backup"
+   ```
+2. Copy this config into place:
+   ```powershell
+   Copy-Item -Recurse -Force ".\nvim-config" "$env:LOCALAPPDATA\nvim"
+   ```
+3. Start Neovim:
+   ```powershell
+   nvim
+   ```
+
+## ▶️ First Run / Usage
+
+1. Open Neovim with:
+   ```bash
+   nvim
+   ```
+2. Wait for `lazy.nvim` to install plugins automatically on first launch.
+3. Run `:checkhealth` to verify dependencies.
+4. Use `<leader>e` to open the file tree and `<leader>f` to find files.
+
 ## 🚀 Plugins
 
 ### Core
